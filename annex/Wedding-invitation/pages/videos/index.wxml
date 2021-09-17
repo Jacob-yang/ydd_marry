@@ -1,0 +1,66 @@
+<view class="page-body">
+  <view class="page-section tc">
+    <view wx:if="{{flag}}">
+      <video
+      id="myVideo" 
+      src="{{videoUrl}}" 
+      binderror="videoErrorCallback" 
+      danmu-list="{{danmuList}}" 
+      enable-danmu 
+      danmu-btn 
+      show-center-play-btn='{{false}}' 
+      show-play-btn="{{true}}" 
+      controls
+      picture-in-picture-mode="{{['push', 'pop']}}"
+      bindenterpictureinpicture='bindVideoEnterPictureInPicture'
+      bindleavepictureinpicture='bindVideoLeavePictureInPicture'
+      autoplay></video>
+    </view>
+    <view wx:else>
+      <image src="/images/save_the_date_pu.gif" class="slide-image" mode="aspectFill"/>
+    </view>
+
+    <view style="margin: 30rpx auto" class="weui-label">祝福</view>
+    <checkbox-group bindchange="checkboxChange">
+      <label class="checkbox">
+        <checkbox value="新婚大喜！百年好合" checked="true"/>新婚大喜！百年好合
+      </label>
+      <label class="checkbox">
+        <checkbox value="百年琴瑟，百年偕老" />百年琴瑟，百年偕老
+      </label>
+      <label class="checkbox">
+        <checkbox value="成家之始，成双成业" />成家之始，成双成业
+      </label>
+      <label class="checkbox">
+        <checkbox value="美满家园，琴瑟合鸣" />美满家园，琴瑟合鸣
+      </label>
+      <label class="checkbox">
+        <checkbox value="珠联壁合，凤凰于飞" />珠联壁合，凤凰于飞
+      </label>
+      <label class="checkbox">
+        <checkbox value="终身之盟，钟鼓乐之" />终身之盟，钟鼓乐之
+      </label>
+      <label class="checkbox">
+        <checkbox value="缔结良缘，缘订三生" />缔结良缘，缘订三生
+      </label>
+      <label class="checkbox">
+        <checkbox value="琴瑟和鸣，岁月静好" />琴瑟和鸣，岁月静好
+      </label>
+      <label class="checkbox">
+        <checkbox value="百年恩爱双心结,千里姻缘一线牵" />百年恩爱双心结,千里姻缘一线牵
+      </label>
+      <view style="white-space:pre-wrap"> </view>
+      <label class="checkbox">
+        <checkbox value="三生石上注良缘，恩爱夫妻彩线牵" />三生石上注良缘，恩爱夫妻彩线牵
+      </label>
+      <view style="white-space:pre-wrap"> </view>
+      <label class="checkbox">
+        <checkbox value="两心相映手相牵，一生一世永相连" />两心相映手相牵，一生一世永相连
+      </label>
+      
+      
+    </checkbox-group>
+    <button style="margin: 30rpx auto"  bindtap="bindSendDanmu" class="page-body-button" type="primary" formType="submit">祝福</button>
+    
+  </view>
+</view>
